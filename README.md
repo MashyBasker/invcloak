@@ -22,5 +22,11 @@ Now we need to perform color segmentation. This is done by detecting where the r
 Now we need to remove the color segmented area and replace it with the background pixels which were stored since we ran a loop for code to store the background pixels. Now it looks like this: 
 
 
+## References/Links
+
+- [Invisible cloak using OpenCV](https://learnopencv.com/invisibility-cloak-using-color-detection-and-segmentation-with-opencv/)
+- [Invisible cloak using OpenCV(GeeksForGeeks)](https://www.geeksforgeeks.org/invisible-cloak-using-opencv-python-project/)
+- [Color segmentation](https://medium.com/srm-mic/color-segmentation-using-opencv-93efa7ac93e2)
+- [OpenCV documentation](https://docs.opencv.org/master/index.html)
 
 
