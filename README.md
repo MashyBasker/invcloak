@@ -41,6 +41,17 @@ The code is available [here](utility-funcs/segment_color.py)
 Now we have a foor loop for 100 iterations in the beginning of the code to capture the background without the human inside it. After segmenting the color from the image, we will display the background through the color segmented part in the frame. 
 For example, the code [here](utility-funcs/color_seg.py) segments yellow color from the frame, this segmented mask is used for showing the background through this mask [here](utility-funcs/backg_seg.py). 
 
+Showing the background through the mask is achieved by this piece of code:
+
+```python
+#generating the mask
+mask = color_segment(frame)
+#applying the mask
+res = cv2.bitwise_and(frame, frame, mask=mask)            
+#add background on the mask
+res3 = cv2.bitwise_and(backg, backg, res, mask=mask)
+```
+
 As I was wearing a yellow T-shirt, the background could be seen through my shirt.
 
 <img src="assets/backg_segmented.gif" alt="demo" width="300px" height="210px">
