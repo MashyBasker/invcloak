@@ -9,18 +9,41 @@ We will be using OpenCV for this project.
 The idea behind the work is that we first capture the background image. Then we detect and segment the cloth(it is important that a **red** cloth is used, as the code has been written for that specific colour).
 
 
-### Part I
+## Detection and segmenation
 
-After starting the camera, give the program some time to capture the background. This will be used to mask the cloak, which will provide the *invisibility* effect.
+First we need to detect the color we want inside the image/frame and create a mask for colors in a range. This will help us to segment out every object inside the image/frame whose color belong in that range.
 
-### Part II
+This is achieved by the following piece of code:
 
-Now we need to perform color segmentation. This is done by detecting where the red colour is present. Now we apply a mask, due to which only the red color parts are visible and everything else is black. It will look like this: 
+```python
+#converting BGR image to HSV
+hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+#lower limit of the range
+low_blue = np.array([110, 50, 50])
+#upper limit of the range
+high_blue = np.array([130, 255, 255])
+#creating the mask
+mask = cv2.inRange(hsv, low_blue, high_blue)
+#applying the mask
+res = cv2.bitwise_and(img, img, mask=mask)
+```
+The variable `res` is the final image/frame with the color segmented out
 
-### Part III
+Normal Image | Blue segmented
+:----------------------:|:----------------:
+![Normal](assets/blue_flower.jpg) | ![Segmented](assets/blue_segmented_flower.png)
 
-Now we need to remove the color segmented area and replace it with the background pixels which were stored since we ran a loop for code to store the background pixels. Now it looks like this: 
+The code is available [here](utility-funcs/segment_color.py)
 
+
+## Showing background
+
+Now we have a foor loop for 100 iterations in the beginning of the code to capture the background without the human inside it. After segmenting the color from the image, we will display the background through the color segmented part in the frame. 
+For example, the code [here](utility-funcs/color_seg.py) segments yellow color from the frame, this segmented mask is used for showing the background through this mask [here](utility-funcs/backg_seg.py). 
+
+As I was wearing a yellow T-shirt, the background could be seen through my shirt.
+
+<img src="assets/backg_segmented.gif" alt="demo" width="300px" height="210px">
 
 
 

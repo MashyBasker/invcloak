@@ -17,7 +17,6 @@ for i in range(100):
         continue
 #####################################################################################################################
 
-
 ########################### PART II: SEGMENTING THE COLOR FROM THE IMAGE FRAME ######################################
 def color_segment(inp_frame):
     """Perform Color Segmentation from image frame. This function segments red color"""

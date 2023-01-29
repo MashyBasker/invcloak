@@ -16,9 +16,9 @@ from time import sleep
 
 def color_segment(inp_frame):
     hsv_img = cv2.cvtColor(inp_frame, cv2.COLOR_BGR2HSV)        #converting the image to hsv format
-    lower_red = np.array([170,120,70])
-    upper_red = np.array([180, 255, 255])
-    mask2 = cv2.inRange(hsv_img, lower_red, upper_red)
+    lower_yellow = np.array([25, 50, 70]) #60, 40.7, 99.2
+    upper_yellow = np.array([35, 255, 255]) #60, 100, 100
+    mask2 = cv2.inRange(hsv_img, lower_yellow, upper_yellow)
     return mask2                                                 #returning the mask for segmenting the image
 
 cap = cv2.VideoCapture(0)                                       #starting webcam
