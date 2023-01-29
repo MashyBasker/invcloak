@@ -46,4 +46,11 @@ As I was wearing a yellow T-shirt, the background could be seen through my shirt
 <img src="assets/backg_segmented.gif" alt="demo" width="300px" height="210px">
 
 
+## References/Links
+
+- [Invisible cloak using OpenCV](https://learnopencv.com/invisibility-cloak-using-color-detection-and-segmentation-with-opencv/)
+- [Invisible cloak using OpenCV(GeeksForGeeks)](https://www.geeksforgeeks.org/invisible-cloak-using-opencv-python-project/)
+- [Color segmentation](https://medium.com/srm-mic/color-segmentation-using-opencv-93efa7ac93e2)
+- [OpenCV documentation](https://docs.opencv.org/master/index.html)
+
 
