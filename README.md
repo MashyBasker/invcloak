@@ -1,6 +1,6 @@
 # Invisibility Cloak 
 
-This is a project for the *Introduction to Python* event by the **FreeScape IIIT Kalyani** club.
+This is a project for the event **PyNova** by the **FreeScape IIIT Kalyani** club.
 
 This is a very popular project, and I will be following some articles and/or github links, all of which we will provided as references for the reader to peruse.
 
